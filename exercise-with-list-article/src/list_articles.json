@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "c6a88d8a-e356-4615-a251-a75b00b0342b",
+		"name": "List articles",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4393858"
+	},
+	"item": [
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// var jsonData = JSON.parse();\r",
+							"// var token = jsonData.user?.token;\r",
+							"// postman.setEnvironmentVariable(\"token\", token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\r\n\t\"user\": {\r\n\t\t\"email\": \"test12345678@gmail.com\",\r\n        \"password\": \"123456\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/users/login",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "favorited article",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxMjM0NTY3OEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InBvc3RlciIsImlhdCI6MTY2MTE2NDI0OCwiZXhwIjoxNjY2MzQ4MjQ4fQ.tvETJKdcKrH7NCl00StUakBP4z2PxW7wv8jMRwwqk2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/articles/Explore-implementations-1/favorite",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"articles",
+						"Explore-implementations-1",
+						"favorite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list article",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxMjM0NTY3OEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InBvc3RlciIsImlhdCI6MTY2MTE2NDI0OCwiZXhwIjoxNjY2MzQ4MjQ4fQ.tvETJKdcKrH7NCl00StUakBP4z2PxW7wv8jMRwwqk2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/articles/?limit=10&offset=2",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"",
+						"articles",
+						""
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "offset",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "not favorited article",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/articles/Explore-implementations-1/favorite",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"articles",
+						"Explore-implementations-1",
+						"favorite"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
