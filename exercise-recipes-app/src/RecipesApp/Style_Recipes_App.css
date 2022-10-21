@@ -1,0 +1,19 @@
+.btn-new-recipe {
+    width: 500px;
+}
+.form-container {
+    width: 500px;
+}
+#imageId {
+    width: fit-content;
+    height: fit-content;
+    display: none;
+}
+#nameIngredentId {
+    width: 200px;
+    margin-right: 20px;
+}
+#quantityIngredentId {
+    width: 100px;
+    margin-right: 20px;
+}
