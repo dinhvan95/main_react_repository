@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: aqua;
+}
+.welcomeContainer {
+    width: auto;
+    text-align: center;
+    padding: 180px;
+}
+.welcomeContainer h1 {
+    color: crimson;
+    margin-bottom: 100px;
+}
+.welcomeContainer button {
+    background-color: blueviolet;
+}
+.signInContainer {
+    padding-top: 90px;
+    text-align: center;
+}
+.signInContainer h1 {
+    color: crimson;
+    margin-bottom: 100px;
+}
+.formContainer {
+    padding: 20px;
+    text-align: start;
+}
+.formContainer a {
+    text-decoration: none;
+}
+.formContainer a:hover {
+    text-decoration: none;
+    color: red;
+}
+.formContainer .w-25 {
+    margin-right: 100px;
+}
+.imageUrlDiv {
+    max-width: 200px;;
+    height: auto;
+    background-size: fill;
+}
+.link_table {
+    text-decoration: none;
+    text-align: center;
+}
